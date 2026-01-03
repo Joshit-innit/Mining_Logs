@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+
+    <!-- 1) JDBC Driver -->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+    <!-- 2) DB URL (change DB name) -->
+    <property name="hibernate.connection.url">
+      jdbc:mysql://localhost:3306/Mine_log?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC
+    </property>
+
+    <!-- 3) DB Username / Password -->
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">Root@1234</property>
+
+    <!-- 4) Dialect -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+    <!-- 5) Show SQL -->
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+
+    <!-- 6) Auto DDL: validate | update | create | create-drop -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+    <!-- 7) Register Entity classes (add one line per entity) -->
+    <mapping class="com.hibernetdemo.entity.MineSite"/>
+<mapping class="com.hibernetdemo.entity.Equipment"/>
+<mapping class="com.hibernetdemo.entity.Worker"/>
+<mapping class="com.hibernetdemo.entity.ShiftLog"/>
+<mapping class="com.hibernetdemo.entity.ProductionLog"/>
+<mapping class="com.hibernetdemo.entity.EquipmentUsage"/>
+<mapping class="com.hibernetdemo.entity.SafetyIncident"/>
+
+
+  </session-factory>
+</hibernate-configuration>
